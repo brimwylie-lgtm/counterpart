@@ -213,17 +213,25 @@
     }
     .cards {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(6, 1fr);
       gap: 0;
       border-top: 1px solid var(--line-light);
     }
     .card {
+      grid-column: span 2;
       padding: 40px 32px 44px;
       border-bottom: 1px solid var(--line-light);
       border-right: 1px solid var(--line-light);
     }
-    .card:first-child { padding-left: 0; }
-    .card:last-child { border-right: none; padding-right: 0; }
+    /* Row 1: cards 1-3 (span 2 each). Row 2: cards 4-5 (span 3 each). */
+    .card:nth-child(4),
+    .card:nth-child(5) { grid-column: span 3; }
+    /* Flush-left at the start of each row */
+    .card:nth-child(1),
+    .card:nth-child(4) { padding-left: 0; }
+    /* Flush-right and no divider at the end of each row */
+    .card:nth-child(3),
+    .card:nth-child(5) { border-right: none; padding-right: 0; }
     .card-cadence {
       font-size: 12px;
       font-weight: 600;
@@ -353,7 +361,10 @@
       .hero { padding: 80px 0 72px; }
       .cols { grid-template-columns: 1fr; gap: 48px; }
       .cards { grid-template-columns: 1fr; }
-      .card, .card:first-child, .card:last-child {
+      .card,
+      .card:nth-child(4),
+      .card:nth-child(5) {
+        grid-column: span 1;
         padding: 32px 0;
         border-right: none;
       }
@@ -379,8 +390,8 @@
   <header class="hero">
     <div class="wrap">
       <div class="logo-placeholder">Logo<br>Placeholder</div>
-      <h1>Agencies are losing clients they shouldn't be losing. The reason is almost never the work. <span class="accent">It's that nobody is actually watching the relationship.</span></h1>
-      <p class="hero-sub">Counterpart is a Relationship Performance Advisory practice for the Canadian media and advertising industry. We keep agency-client partnerships healthy, surface issues before they become crises, and provide structured oversight of the relationship itself, not just the work it produces. Built for agencies and the marketers they serve.</p>
+      <h1>The agency-client relationship is the most valuable thing in the room. <span class="accent">It's also the most under-managed.</span></h1>
+      <p class="hero-sub">Counterpart is a Relationship Performance Advisory practice for the Canadian media and advertising industry. We keep agency-client partnerships healthy, surface issues before they become crises, and provide structured oversight of the relationship itself, not just the work it produces.</p>
       <a href="#contact" class="btn">Start a conversation <span class="arrow">&rarr;</span></a>
     </div>
   </header>
@@ -389,21 +400,21 @@
   <section class="problem">
     <div class="wrap">
       <p class="eyebrow">The Problem</p>
-      <h2 class="section-title">The relationship is the only thing in the building with no owner.</h2>
-      <p class="problem-lead">Agencies are good at making the work. Clients are good at running their businesses. The partnership between them is where the money quietly leaks out, and nobody is responsible for fixing it.</p>
+      <h2 class="section-title">Strong partnerships don't maintain themselves. The ones that last are actively managed.</h2>
+      <p class="problem-lead">Agencies are good at making the work. Clients are good at running their businesses. The relationship between them, the briefs, the reviews, the trust, the feedback loops, tends to get managed informally at best. That's where value quietly leaks out.</p>
 
       <div class="cols">
         <div>
           <p class="col-head">For Agencies</p>
-          <div class="point"><span class="point-num">01</span><p>Client loss can represent 10 to 30 percent of revenue, and it is almost always preceded by months of drift that nobody named out loud.</p></div>
-          <div class="point"><span class="point-num">02</span><p>There is no early warning system and no neutral checkpoint. By the time a review is called, the decision has usually already been made.</p></div>
-          <div class="point"><span class="point-num">03</span><p>The account team is the last group of people who will surface bad news internally. They are too close, and too exposed, to call it.</p></div>
+          <div class="point"><span class="point-num">01</span><p>Client loss can represent 10 to 30 percent of revenue. It is almost always preceded by months of gradual drift, signals that were present but never formally surfaced.</p></div>
+          <div class="point"><span class="point-num">02</span><p>By the time a relationship goes to formal review, the decision has usually been forming for a while. The earlier the conversation, the more options exist.</p></div>
+          <div class="point"><span class="point-num">03</span><p>The people closest to the relationship are also the most exposed within it. A neutral outside perspective changes what gets said, and when.</p></div>
         </div>
         <div>
           <p class="col-head">For Marketers</p>
-          <div class="point"><span class="point-num">01</span><p>Most mid-market brands have no internal senior resource whose actual job is making the agency relationship work.</p></div>
-          <div class="point"><span class="point-num">02</span><p>Agency reporting is often built to look good rather than be useful. You cannot manage what you cannot clearly see.</p></div>
-          <div class="point"><span class="point-num">03</span><p>Agencies get changed repeatedly for the same underlying reasons, because the client-side operating model never changes between them.</p></div>
+          <div class="point"><span class="point-num">01</span><p>Most mid-market brands don't have a dedicated internal resource whose job is the agency relationship. It becomes one of many priorities for an already stretched marketing lead.</p></div>
+          <div class="point"><span class="point-num">02</span><p>Agency reporting is often structured around what looks good rather than what is useful. It's difficult to manage a relationship you can't clearly see.</p></div>
+          <div class="point"><span class="point-num">03</span><p>When agencies change, the underlying dynamic often doesn't. The operating model on the client side tends to follow the same patterns regardless of who the agency is.</p></div>
         </div>
       </div>
     </div>
@@ -414,7 +425,7 @@
     <div class="wrap">
       <p class="eyebrow">What We Do</p>
       <h2 class="section-title">A standing cadence, not an occasional intervention.</h2>
-      <p class="dowork-lead">We sit inside the operating rhythm of the relationship on a fixed schedule. The annual assessment means something because it is built on a full year of real data, not a single meeting.</p>
+      <p class="dowork-lead">We sit inside the operating rhythm of the relationship on a fixed schedule.</p>
 
       <div class="cards">
         <div class="card">
@@ -447,6 +458,26 @@
             <li>Formal recommendation: continue, restructure, or transition</li>
           </ul>
         </div>
+        <div class="card">
+          <p class="card-cadence">Training</p>
+          <h3>Capability Building</h3>
+          <ul>
+            <li>Structured programs for agency teams at every level</li>
+            <li>Foundation skills for junior planners and coordinators</li>
+            <li>Practitioner and strategic levels for managers and senior leaders</li>
+            <li>Building the relationship management capability that makes every account more durable</li>
+          </ul>
+        </div>
+        <div class="card">
+          <p class="card-cadence">Events</p>
+          <h3>Relationship Days</h3>
+          <ul>
+            <li>Structured, agency-sanctioned access events for media vendors</li>
+            <li>Eliminates the incentive for vendors to bypass the agency and go directly to clients</li>
+            <li>Agency controls the agenda and attendee list</li>
+            <li>Available as a standalone product or embedded in a full advisory engagement</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -462,6 +493,7 @@
         <div class="starts-body">
           <p>Most engagements begin with a pilot on one to three accounts. Typically these are relationships that carry meaningful revenue and are already showing early warning signs.</p>
           <p>A pilot has defined scope, a defined timeline, and a defined output. You will know exactly what you are getting and exactly when. Most full engagements begin here, once the value is on the table rather than in a proposal.</p>
+          <p>Counterpart works across the full relationship ecosystem, agency and client, multi-agency rosters, and agency and media vendor relationships. The entry point depends on where the pressure is.</p>
           <div class="triggers">
             <p class="triggers-label">When to make the call</p>
             <div class="trigger"><span class="dot"></span>New client leadership has just arrived</div>
