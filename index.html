@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Counterpart — Relationship Performance Advisory</title>
+  <meta name="description" content="Counterpart is a Relationship Performance Advisory practice for the Canadian media and advertising industry. We keep agency-client partnerships healthy and surface issues before they become crises." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --teal: #1F4E5F;
+      --teal-deep: #173B48;
+      --offwhite: #F1F0EC;
+      --ink: #1A1A1A;
+      --bronze: #8C6A3F;
+      --line: rgba(26, 26, 26, 0.12);
+      --line-light: rgba(241, 240, 236, 0.18);
+      --measure: 60ch;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+    body {
+      font-family: 'Inter', -apple-system, system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--offwhite);
+      line-height: 1.6;
+      font-size: 17px;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-weight: 500;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .wrap {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* ---------- NAV ---------- */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(241, 240, 236, 0.86);
+      backdrop-filter: saturate(140%) blur(10px);
+      -webkit-backdrop-filter: saturate(140%) blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+    .wordmark {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      font-size: 15px;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+    .nav-link {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--teal);
+      padding-bottom: 2px;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.25s ease;
+    }
+    .nav-link:hover { border-bottom-color: var(--teal); }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      padding: 120px 0 110px;
+      border-bottom: 1px solid var(--line);
+    }
+    .logo-placeholder {
+      width: 84px;
+      height: 84px;
+      border: 1px dashed rgba(26,26,26,0.28);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(26,26,26,0.4);
+      margin-bottom: 56px;
+      line-height: 1.3;
+    }
+    .hero h1 {
+      font-size: clamp(2.4rem, 5.2vw, 4rem);
+      max-width: 17ch;
+      margin-bottom: 36px;
+      color: var(--ink);
+    }
+    .hero h1 .accent { color: var(--teal); }
+    .hero-sub {
+      max-width: 56ch;
+      font-size: 1.18rem;
+      color: rgba(26,26,26,0.78);
+      margin-bottom: 44px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--teal);
+      color: var(--offwhite);
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      padding: 16px 30px;
+      border-radius: 2px;
+      transition: background 0.25s ease, transform 0.25s ease;
+    }
+    .btn:hover { background: var(--teal-deep); transform: translateY(-1px); }
+    .btn .arrow { transition: transform 0.25s ease; }
+    .btn:hover .arrow { transform: translateX(4px); }
+
+    /* ---------- SECTION SCAFFOLD ---------- */
+    section { padding: 100px 0; }
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--bronze);
+      margin-bottom: 22px;
+    }
+    .section-title {
+      font-size: clamp(1.9rem, 3.6vw, 2.6rem);
+      max-width: 22ch;
+      margin-bottom: 18px;
+      color: var(--ink);
+    }
+
+    /* ---------- PROBLEM ---------- */
+    .problem { border-bottom: 1px solid var(--line); }
+    .problem-lead {
+      max-width: 52ch;
+      font-size: 1.12rem;
+      color: rgba(26,26,26,0.78);
+      margin-bottom: 64px;
+    }
+    .cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+    }
+    .col-head {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--teal);
+      padding-bottom: 18px;
+      margin-bottom: 26px;
+      border-bottom: 1px solid var(--line);
+    }
+    .point {
+      display: flex;
+      gap: 16px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .point:last-child { border-bottom: none; }
+    .point-num {
+      font-family: 'Fraunces', serif;
+      font-size: 15px;
+      color: var(--bronze);
+      flex-shrink: 0;
+      width: 22px;
+      padding-top: 1px;
+    }
+    .point p { font-size: 1.02rem; color: rgba(26,26,26,0.82); }
+
+    /* ---------- WHAT WE DO ---------- */
+    .dowork {
+      background: var(--teal);
+      color: var(--offwhite);
+    }
+    .dowork .eyebrow { color: rgba(241,240,236,0.65); }
+    .dowork .section-title { color: var(--offwhite); }
+    .dowork-lead {
+      max-width: 52ch;
+      color: rgba(241,240,236,0.78);
+      font-size: 1.12rem;
+      margin-bottom: 64px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border-top: 1px solid var(--line-light);
+    }
+    .card {
+      padding: 40px 32px 44px;
+      border-bottom: 1px solid var(--line-light);
+      border-right: 1px solid var(--line-light);
+    }
+    .card:first-child { padding-left: 0; }
+    .card:last-child { border-right: none; padding-right: 0; }
+    .card-cadence {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--bronze);
+      filter: brightness(1.35);
+      margin-bottom: 16px;
+    }
+    .card h3 {
+      font-size: 1.5rem;
+      color: var(--offwhite);
+      margin-bottom: 20px;
+    }
+    .card ul { list-style: none; }
+    .card li {
+      font-size: 0.97rem;
+      color: rgba(241,240,236,0.78);
+      padding: 9px 0;
+      border-bottom: 1px solid rgba(241,240,236,0.1);
+      line-height: 1.45;
+    }
+    .card li:last-child { border-bottom: none; }
+
+    /* ---------- HOW IT STARTS ---------- */
+    .starts { border-bottom: 1px solid var(--line); }
+    .starts-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 72px;
+      align-items: start;
+    }
+    .starts-body p {
+      font-size: 1.14rem;
+      color: rgba(26,26,26,0.82);
+      max-width: 56ch;
+      margin-bottom: 22px;
+    }
+    .starts-body p:last-child { margin-bottom: 0; }
+    .triggers {
+      border-top: 1px solid var(--line);
+      padding-top: 28px;
+    }
+    .trigger {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 1rem;
+      color: rgba(26,26,26,0.82);
+    }
+    .trigger:last-child { border-bottom: none; }
+    .trigger .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--bronze);
+      flex-shrink: 0;
+      transform: translateY(-2px);
+    }
+    .triggers-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 6px;
+    }
+
+    /* ---------- CONTACT ---------- */
+    .contact {
+      background: var(--ink);
+      color: var(--offwhite);
+    }
+    .contact .eyebrow { color: var(--bronze); filter: brightness(1.35); }
+    .contact h2 {
+      font-size: clamp(2rem, 4vw, 2.9rem);
+      max-width: 18ch;
+      margin-bottom: 28px;
+      color: var(--offwhite);
+    }
+    .contact p {
+      max-width: 50ch;
+      color: rgba(241,240,236,0.75);
+      font-size: 1.12rem;
+      margin-bottom: 48px;
+    }
+    .form-placeholder {
+      border: 1px dashed rgba(241,240,236,0.3);
+      border-radius: 4px;
+      padding: 64px 32px;
+      text-align: center;
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(241,240,236,0.5);
+      margin-bottom: 40px;
+    }
+    .contact-domain {
+      font-family: 'Fraunces', serif;
+      font-size: 1.4rem;
+      color: var(--offwhite);
+      letter-spacing: 0.01em;
+    }
+    .contact-domain a { border-bottom: 1px solid rgba(241,240,236,0.4); padding-bottom: 2px; }
+    .contact-domain a:hover { border-bottom-color: var(--offwhite); }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      background: var(--ink);
+      border-top: 1px solid rgba(241,240,236,0.12);
+      padding: 32px 0;
+    }
+    .footer-line {
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      color: rgba(241,240,236,0.5);
+      text-transform: uppercase;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 820px) {
+      body { font-size: 16px; }
+      .wrap { padding: 0 24px; }
+      section { padding: 72px 0; }
+      .hero { padding: 80px 0 72px; }
+      .cols { grid-template-columns: 1fr; gap: 48px; }
+      .cards { grid-template-columns: 1fr; }
+      .card, .card:first-child, .card:last-child {
+        padding: 32px 0;
+        border-right: none;
+      }
+      .starts-grid { grid-template-columns: 1fr; gap: 40px; }
+    }
+    @media (max-width: 480px) {
+      .wrap { padding: 0 20px; }
+      .nav-link { font-size: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="wrap nav-inner">
+      <a href="#" class="wordmark">Counterpart</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="wrap">
+      <div class="logo-placeholder">Logo<br>Placeholder</div>
+      <h1>Agencies are losing clients they shouldn't be losing. The reason is almost never the work. <span class="accent">It's that nobody is actually watching the relationship.</span></h1>
+      <p class="hero-sub">Counterpart is a Relationship Performance Advisory practice for the Canadian media and advertising industry. We keep agency-client partnerships healthy, surface issues before they become crises, and provide structured oversight of the relationship itself, not just the work it produces. Built for agencies and the marketers they serve.</p>
+      <a href="#contact" class="btn">Start a conversation <span class="arrow">&rarr;</span></a>
+    </div>
+  </header>
+
+  <!-- THE PROBLEM -->
+  <section class="problem">
+    <div class="wrap">
+      <p class="eyebrow">The Problem</p>
+      <h2 class="section-title">The relationship is the only thing in the building with no owner.</h2>
+      <p class="problem-lead">Agencies are good at making the work. Clients are good at running their businesses. The partnership between them is where the money quietly leaks out, and nobody is responsible for fixing it.</p>
+
+      <div class="cols">
+        <div>
+          <p class="col-head">For Agencies</p>
+          <div class="point"><span class="point-num">01</span><p>Client loss can represent 10 to 30 percent of revenue, and it is almost always preceded by months of drift that nobody named out loud.</p></div>
+          <div class="point"><span class="point-num">02</span><p>There is no early warning system and no neutral checkpoint. By the time a review is called, the decision has usually already been made.</p></div>
+          <div class="point"><span class="point-num">03</span><p>The account team is the last group of people who will surface bad news internally. They are too close, and too exposed, to call it.</p></div>
+        </div>
+        <div>
+          <p class="col-head">For Marketers</p>
+          <div class="point"><span class="point-num">01</span><p>Most mid-market brands have no internal senior resource whose actual job is making the agency relationship work.</p></div>
+          <div class="point"><span class="point-num">02</span><p>Agency reporting is often built to look good rather than be useful. You cannot manage what you cannot clearly see.</p></div>
+          <div class="point"><span class="point-num">03</span><p>Agencies get changed repeatedly for the same underlying reasons, because the client-side operating model never changes between them.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE DO -->
+  <section class="dowork">
+    <div class="wrap">
+      <p class="eyebrow">What We Do</p>
+      <h2 class="section-title">A standing cadence, not an occasional intervention.</h2>
+      <p class="dowork-lead">We sit inside the operating rhythm of the relationship on a fixed schedule. The annual assessment means something because it is built on a full year of real data, not a single meeting.</p>
+
+      <div class="cards">
+        <div class="card">
+          <p class="card-cadence">Monthly</p>
+          <h3>Checkpoints</h3>
+          <ul>
+            <li>Working-level health check with day-to-day leads on both sides</li>
+            <li>Brief quality review: what was pushed back, and why</li>
+            <li>Spend pacing and deviation from plan</li>
+            <li>Emerging tensions surfaced before they harden into positions</li>
+          </ul>
+        </div>
+        <div class="card">
+          <p class="card-cadence">Quarterly</p>
+          <h3>Reviews</h3>
+          <ul>
+            <li>Senior leadership from both sides in the room</li>
+            <li>Performance against committed KPIs and softer goals</li>
+            <li>Relationship temperature read from each side, independently</li>
+            <li>Forward look at next quarter and any scope changes</li>
+          </ul>
+        </div>
+        <div class="card">
+          <p class="card-cadence">Annual</p>
+          <h3>Assessment</h3>
+          <ul>
+            <li>Full 360-degree performance scorecard</li>
+            <li>Confidential feedback from both sides, synthesized independently</li>
+            <li>Strategic assessment of fit going forward</li>
+            <li>Formal recommendation: continue, restructure, or transition</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT STARTS -->
+  <section class="starts">
+    <div class="wrap">
+      <div class="starts-grid">
+        <div>
+          <p class="eyebrow">How It Starts</p>
+          <h2 class="section-title">Start with one account that matters.</h2>
+        </div>
+        <div class="starts-body">
+          <p>Most engagements begin with a pilot on one to three accounts. Typically these are relationships that carry meaningful revenue and are already showing early warning signs.</p>
+          <p>A pilot has defined scope, a defined timeline, and a defined output. You will know exactly what you are getting and exactly when. Most full engagements begin here, once the value is on the table rather than in a proposal.</p>
+          <div class="triggers">
+            <p class="triggers-label">When to make the call</p>
+            <div class="trigger"><span class="dot"></span>New client leadership has just arrived</div>
+            <div class="trigger"><span class="dot"></span>Feedback is being given but not landing</div>
+            <div class="trigger"><span class="dot"></span>The account is under visible performance pressure</div>
+            <div class="trigger"><span class="dot"></span>Something has shifted and no one has named it yet</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <p class="eyebrow">Contact</p>
+      <h2>If an account is on your mind, it is already worth a conversation.</h2>
+      <p>Tell us which relationship is keeping you up at night. We will tell you whether it is something we can help with, plainly, before anyone signs anything.</p>
+
+      <div class="form-placeholder">Contact Form Placeholder</div>
+
+      <p class="contact-domain"><a href="https://counterpart.media">counterpart.media</a></p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap">
+      <p class="footer-line">Counterpart &middot; counterpart.media &middot; &copy; 2026 &middot; Confidential</p>
+    </div>
+  </footer>
+
+</body>
+</html>
