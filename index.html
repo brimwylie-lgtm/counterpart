@@ -6,6 +6,28 @@
   <title>Counterpart — Relationship Performance Advisory</title>
   <meta name="description" content="Counterpart is a Relationship Performance Advisory practice for the Canadian media and advertising industry. We keep agency-client partnerships healthy and surface issues before they become crises." />
 
+  <!-- Canonical -->
+  <link rel="canonical" href="https://counterpart.media/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Counterpart" />
+  <meta property="og:title" content="Counterpart — Relationship Performance Advisory" />
+  <meta property="og:description" content="The agency-client relationship is the most valuable thing in the room. It's also the most under-managed. Counterpart is the advisory practice that fixes that." />
+  <meta property="og:url" content="https://counterpart.media/" />
+  <meta property="og:image" content="https://counterpart.media/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Counterpart — Relationship Performance Advisory" />
+  <meta property="og:locale" content="en_CA" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Counterpart — Relationship Performance Advisory" />
+  <meta name="twitter:description" content="The agency-client relationship is the most valuable thing in the room. It's also the most under-managed." />
+  <meta name="twitter:image" content="https://counterpart.media/og-image.png" />
+  <meta name="twitter:image:alt" content="Counterpart — Relationship Performance Advisory" />
+
   <!-- Favicons -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
@@ -507,6 +529,13 @@
       color: rgba(241,240,236,0.5);
       text-transform: uppercase;
     }
+    .footer-line a {
+      color: rgba(241,240,236,0.5);
+      text-decoration: none;
+      transition: color 0.25s ease;
+    }
+    .footer-line a:hover { color: rgba(241,240,236,0.85); }
+    .footer-sep { margin: 0 8px; opacity: 0.5; }
 
     /* ---------- RESPONSIVE ---------- */
     @media (max-width: 820px) {
@@ -530,6 +559,8 @@
       .about-portrait { width: 160px; height: 160px; }
       .nav-links { display: none; }
       .nav-toggle { display: inline-flex; }
+      .footer-line { line-height: 2.1; }
+      .footer-sep { margin: 0 6px; }
     }
     @media (max-width: 480px) {
       .wrap { padding: 0 20px; }
@@ -729,7 +760,7 @@
   <!-- FOOTER -->
   <footer>
     <div class="wrap">
-      <p class="footer-line">Counterpart &middot; counterpart.media &middot; &copy; 2026 &middot; Confidential</p>
+      <p class="footer-line">Counterpart <span class="footer-sep">&middot;</span> counterpart.media <span class="footer-sep">&middot;</span> &copy; 2026 <span class="footer-sep">&middot;</span> Confidential <span class="footer-sep">&middot;</span> <a href="/privacy">Privacy</a> <span class="footer-sep">&middot;</span> <a href="/legal">Legal</a></p>
     </div>
   </footer>
   <script>

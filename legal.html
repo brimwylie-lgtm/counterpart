@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Legal — Counterpart</title>
+  <meta name="description" content="Site ownership, copyright, and disclaimers for counterpart.media." />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <meta name="theme-color" content="#1F4E5F" />
+
+  <!-- Tally embed -->
+  <script async src="https://tally.so/widgets/embed.js"></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --teal: #1F4E5F;
+      --teal-deep: #173B48;
+      --offwhite: #F1F0EC;
+      --ink: #1A1A1A;
+      --bronze: #8C6A3F;
+      --line: rgba(26, 26, 26, 0.12);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: 'Inter', -apple-system, system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--offwhite);
+      line-height: 1.7;
+      font-size: 17px;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    h1, h2, h3 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-weight: 500;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+    }
+    a { color: var(--teal); text-decoration: none; border-bottom: 1px solid rgba(31, 78, 95, 0.3); padding-bottom: 1px; transition: border-color 0.25s ease; }
+    a:hover { border-bottom-color: var(--teal); }
+    .wrap {
+      width: 100%;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(241, 240, 236, 0.86);
+      backdrop-filter: saturate(140%) blur(10px);
+      -webkit-backdrop-filter: saturate(140%) blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+    .wordmark {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      font-size: 15px;
+      text-transform: uppercase;
+      color: var(--ink);
+      border-bottom: none;
+    }
+    .wordmark:hover { border-bottom: none; }
+    .nav-back {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--teal);
+      border-bottom: none;
+    }
+    .nav-back:hover { border-bottom: none; opacity: 0.7; }
+
+    .page { padding: 80px 0 100px; }
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--bronze);
+      margin-bottom: 22px;
+    }
+    h1 {
+      font-size: clamp(2.2rem, 4.5vw, 3rem);
+      max-width: 18ch;
+      margin-bottom: 18px;
+      color: var(--ink);
+    }
+    .lede {
+      font-size: 1.12rem;
+      color: rgba(26,26,26,0.78);
+      margin-bottom: 48px;
+      max-width: 60ch;
+    }
+    .effective {
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      color: rgba(26,26,26,0.55);
+      margin-bottom: 64px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--line);
+    }
+    h2 {
+      font-size: 1.5rem;
+      margin-top: 56px;
+      margin-bottom: 18px;
+      color: var(--teal);
+    }
+    h2:first-of-type { margin-top: 0; }
+    p, ul { margin-bottom: 20px; color: rgba(26,26,26,0.85); }
+    ul { padding-left: 24px; }
+    li { margin-bottom: 8px; }
+
+    .contact-cta {
+      margin-top: 56px;
+      padding: 32px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .contact-cta p { margin-bottom: 0; }
+    .contact-cta-link {
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+      font: inherit;
+      color: var(--teal);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(31, 78, 95, 0.3);
+      padding-bottom: 1px;
+      transition: border-color 0.25s ease;
+    }
+    .contact-cta-link:hover { border-bottom-color: var(--teal); }
+
+    footer {
+      background: var(--ink);
+      padding: 32px 0;
+    }
+    .footer-line {
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      color: rgba(241,240,236,0.5);
+      text-transform: uppercase;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+    .footer-line a {
+      color: rgba(241,240,236,0.5);
+      border-bottom: none;
+      transition: color 0.25s ease;
+    }
+    .footer-line a:hover { color: rgba(241,240,236,0.85); border-bottom: none; }
+    .footer-sep { margin: 0 8px; opacity: 0.4; }
+
+    @media (max-width: 820px) {
+      body { font-size: 16px; }
+      .wrap, .nav-inner, .footer-line { padding-left: 24px; padding-right: 24px; }
+      .page { padding: 56px 0 72px; }
+      h2 { margin-top: 44px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="wordmark">Counterpart</a>
+      <a href="/" class="nav-back">&larr; Back</a>
+    </div>
+  </nav>
+
+  <main class="page">
+    <div class="wrap">
+      <p class="eyebrow">Legal</p>
+      <h1>Site ownership, content, and disclaimers.</h1>
+      <p class="lede">This page covers the basic legal terms under which counterpart.media is published. It does not govern any commercial engagement with Counterpart; those are set out separately in a written engagement letter.</p>
+      <p class="effective">Effective June 2026.</p>
+
+      <h2>Site ownership</h2>
+      <p>counterpart.media is operated by Counterpart, an advisory practice based in Ontario, Canada. References to "Counterpart," "we," "our," or "the practice" on this site refer to the same.</p>
+
+      <h2>Content and copyright</h2>
+      <p>All content on this site, including text, graphics, the Counterpart wordmark, and the visual design, is the property of Counterpart and is protected by Canadian and international copyright law.</p>
+      <p>You may read, share, link to, and quote brief portions of this site for non-commercial purposes, such as referencing the practice in conversation, email, or social media. You may not reproduce substantial portions of the content, republish it on other sites, or use it in commercial materials without written permission.</p>
+
+      <h2>No warranty</h2>
+      <p>This site is provided for informational purposes. The content describes Counterpart's services, positioning, and point of view, and is intended to help prospective clients and partners understand what the practice does.</p>
+      <p>Nothing on this site constitutes professional advice, a contractual offer, or a guarantee of outcomes. Counterpart's services are delivered under written engagement letters that set out the specific scope, deliverables, fees, and terms of any work performed. The terms of an engagement, not the content of this site, govern the commercial relationship.</p>
+
+      <h2>External links and third-party services</h2>
+      <p>This site may link to external sites or services from time to time. Counterpart is not responsible for the content, accuracy, or practices of those external sites.</p>
+      <p>The contact form on this site is provided by Tally (tally.so), and typefaces are loaded from Google Fonts. See the <a href="/privacy">privacy page</a> for how data flows through those services.</p>
+
+      <h2>Engagement terms</h2>
+      <p>Any commercial work performed by Counterpart is governed by a separate written engagement letter that the client and Counterpart both sign. That document, not this website, is where the terms, scope, fees, confidentiality provisions, and other commercial details are set out. If you are considering engaging Counterpart, the engagement letter is the place to read and negotiate the terms that will actually apply.</p>
+
+      <h2>Governing law</h2>
+      <p>This site and its terms are governed by the laws of the Province of Ontario and the federal laws of Canada that apply within it. Any dispute arising from use of this site is subject to the exclusive jurisdiction of the courts of Ontario.</p>
+
+      <h2>Changes</h2>
+      <p>Counterpart may update this page from time to time. The effective date at the top will be revised when material changes are made. Continued use of the site after a change indicates acceptance of the updated terms.</p>
+
+      <div class="contact-cta">
+        <p>Legal inquiry or question about these terms? <button class="contact-cta-link" data-tally-open="68VLak" data-tally-hide-title="1" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">Contact Counterpart</button>.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p class="footer-line">
+      Counterpart <span class="footer-sep">&middot;</span>
+      <a href="/">counterpart.media</a> <span class="footer-sep">&middot;</span>
+      &copy; 2026 <span class="footer-sep">&middot;</span>
+      <a href="/privacy">Privacy</a> <span class="footer-sep">&middot;</span>
+      <a href="/legal">Legal</a>
+    </p>
+  </footer>
+
+</body>
+</html>
